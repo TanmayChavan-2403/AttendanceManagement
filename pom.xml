@@ -14,7 +14,7 @@
 	<name>AttendanceManagement</name>
 	<description>Experiment 15 to connect it to database</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 
@@ -45,6 +45,7 @@
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -63,8 +64,25 @@
 		    <version>1.2</version>
 		</dependency>
 
-		
 	</dependencies>
+	
+	<dependencyManagement>
+	  <dependencies>
+	    <dependency>
+	      <groupId>com.azure.spring</groupId>
+	      <artifactId>spring-cloud-azure-dependencies</artifactId>
+	      <version>4.8.0</version>
+	      <type>pom</type>
+	      <scope>import</scope>
+	    </dependency>
+	    
+	    <dependency>
+		  <groupId>com.azure.spring</groupId>
+		  <artifactId>spring-cloud-azure-starter-jdbc-mysql</artifactId>
+		</dependency>
+	    
+	  </dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>
