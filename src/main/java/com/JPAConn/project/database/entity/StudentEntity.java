@@ -9,6 +9,9 @@ public class StudentEntity {
 	// uid, name, branch, roll_number, java, process_automation, software_testing, year, profile
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
 	@Column(name="uid")
 	private Integer uid;
 	
@@ -36,6 +39,25 @@ public class StudentEntity {
 	@Column(name="profile")
 	private String profile;	
 	
+	public StudentEntity() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public StudentEntity(Integer uid, String name, String branch, String rollNumber, Integer java, Integer pa,
+			Integer st, String year, String profile) {
+		super();
+		this.uid = uid;
+		this.name = name;
+		this.branch = branch;
+		this.rollNumber = rollNumber;
+		this.java = java;
+		this.pa = pa;
+		this.st = st;
+		this.year = year;
+		this.profile = profile;
+	}
+
+
 	public Integer getUid() {
 		return uid;
 	}
