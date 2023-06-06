@@ -8,6 +8,9 @@ public class FacultyEntity {
 	// username, Name, password, lecture, profile, totalConducted, batch, branch
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
 	@Column(name= "username")
 	private String username;
 	
@@ -34,6 +37,26 @@ public class FacultyEntity {
 	
 	@Column(name="session")
 	private Boolean session;
+	
+	
+
+	public FacultyEntity(String username, String name, String password, String lecture, String profile,
+			Integer total_conducted, String batch, String branch, Boolean session) {
+		super();
+		this.username = username;
+		this.name = name;
+		this.password = password;
+		this.lecture = lecture;
+		this.profile = profile;
+		this.total_conducted = total_conducted;
+		this.batch = batch;
+		this.branch = branch;
+		this.session = session;
+	}
+
+	public FacultyEntity() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Boolean getSession() {
 		return session;
